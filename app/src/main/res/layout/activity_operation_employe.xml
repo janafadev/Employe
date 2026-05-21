@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context="com.example.myapplication.OperationEmployeActivity">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar" />
+
+    <!-- Contenu -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <!-- ====================== -->
+            <!-- CARD FORMULAIRE -->
+            <!-- ====================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="#E0E0E0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Titre -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="👤 Informations de l'employé"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <!-- CODE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_code"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Numero d'employé"
+                        app:boxStrokeColor="@color/primaryDark"
+                        app:hintTextColor="@color/primaryDark"
+                        app:startIconDrawable="@android:drawable/ic_menu_sort_by_size"
+                        app:startIconTint="@color/primaryDark">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- NOM -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nom"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nom complet"
+                        app:boxStrokeColor="@color/primaryDark"
+                        app:hintTextColor="@color/primaryDark"
+                        app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                        app:startIconTint="@color/primaryDark">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- JOURS -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_jours"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nombre de jours travaillés"
+                        app:boxStrokeColor="@color/primaryDark"
+                        app:helperText="Ex : 20, 25, 30..."
+                        app:helperTextTextColor="#757575"
+                        app:hintTextColor="@color/primaryDark"
+                        app:startIconDrawable="@android:drawable/ic_menu_today"
+                        app:startIconTint="@color/primaryDark">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_jours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- POURCENTAGE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_taux"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Pourcentage journalier"
+                        app:boxStrokeColor="@color/primaryDark"
+                        app:helperText="Pourcentage du salaire par jour"
+                        app:helperTextTextColor="#757575"
+                        app:hintTextColor="@color/primaryDark"
+                        app:startIconDrawable="@android:drawable/ic_menu_manage"
+                        app:startIconTint="@color/primaryDark"
+                        app:suffixText="%"
+                        app:suffixTextColor="@color/primaryDark">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_taux"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:inputType="numberDecimal"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ====================== -->
+            <!-- CARD CALCUL -->
+            <!-- ====================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_calcul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#E3F2FD"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/card_form"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="💰 Calcul du salaire"
+                        android:textColor="#1976D2"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_calcul_salaire"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="Salaire = Nombre de jours × Pourcentage"
+                        android:textColor="#424242"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_salaire_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total : 0 AR"
+                        android:textColor="#1976D2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ====================== -->
+            <!-- BOUTON -->
+            <!-- ====================== -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_enregistrer"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Enregistrer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_save"
+                app:iconGravity="textStart"
+                app:layout_constraintTop_toBottomOf="@id/card_calcul" />
+
+            <!-- ====================== -->
+            <!-- PROGRESS -->
+            <!-- ====================== -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:indeterminateTint="@color/primaryDark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
